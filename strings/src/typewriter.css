@@ -1,0 +1,57 @@
+:root{
+  --size-move-distance:0px;
+  --anim-move : 0;
+  --anim-duration      : 300ms;
+  /* --size-move-distance : 50px;
+  --anim-move-bounce   : -5px; */
+}
+
+.typewriter,
+.apper{
+  /* display:none; */
+  /* opacity:0.0; */
+}
+.typewriter[data-view="1"],
+.apper[data-view="1"]{
+  /* display:block; */
+  /* opacity:1.0; */
+}
+
+.typewriter,
+.apper,
+.typewriter .typewriter-word,
+.apper .typewriter-word{
+  white-space:pre-wrap;
+  word-break:break-all;
+}
+
+.typewriter .typewriter-word,
+.apper .typewriter-word{
+  display:inline-block;
+  transform:translateY(var(--size-move-distance));
+  opacity:0;
+  font-size:inherit!important;
+  font-family:inherit!important;
+}
+
+.typewriter[data-anim="1"] .typewriter-word,
+.apper[data-anim="1"] .typewriter-word{
+  animation-name : anim-typewriter;
+  animation-duration : var(--anim-duration);
+  animation-timing-function : ease;
+  animation-fill-mode:forwards;
+}
+
+@keyframes anim-typewriter{
+  0% {
+    opacity:0;
+    transform:translateY(var(--size-move-distance));
+  }
+  70%{
+    transform:translateY(var(--anim-move-bounce));
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
