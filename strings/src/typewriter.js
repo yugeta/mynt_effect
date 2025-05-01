@@ -18,7 +18,7 @@ export class Typewriter{
     if(!options || !options.elm){return}
     this.options = options || {}
     this.set_css()
-    this.setting()
+    this.setting(this.options.elm)
     this.event_mode()
   }
 
@@ -54,8 +54,8 @@ export class Typewriter{
   }
 
   // 文字をエレメントに分解
-  setting(delay_num){
-    const elm = this.options.elm
+  setting(elm, delay_num){
+    // const elm = this.options.elm
     delay_num = delay_num || 0
     if(!elm || !elm.innerHTML){return}
     elm.classList.add(this.name)
@@ -67,9 +67,10 @@ export class Typewriter{
       switch(elm.firstChild.nodeType){
         // element
         case 1:
-          delay_num += this.options.speed
-          elm.firstChild.classList.add(`${this.name}-word`)
-          elm.firstChild.style.setProperty("animation-delay" , `${delay_num}ms`)
+          // delay_num += this.options.speed
+          // elm.firstChild.classList.add(`${this.name}-word`)
+          // elm.firstChild.style.setProperty("animation-delay" , `${delay_num}ms`)
+          delay_num = this.setting(elm.firstChild, delay_num)
           new_elm.appendChild(elm.firstChild)
         break
 
