@@ -34,7 +34,7 @@ export class Fadein{
       case "scroll":
       default:
         window.addEventListener("scroll", this.scroll.bind(this))
-        // requestanimationframe(this.scroll.bind(this))
+        requestAnimationFrame(this.scroll.bind(this))
         break
     }
   }
