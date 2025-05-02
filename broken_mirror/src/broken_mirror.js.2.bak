@@ -20,7 +20,6 @@ export class BrokenMirror{
 			zIndex           : 0,
 			finished         : null,
 			delay            : 1000,
-			style            : {},
 		}, options || {})
 
 		this.promise = new Promise((resolve, reject)=>{
@@ -103,8 +102,6 @@ export class BrokenMirror{
     this.frameElm                = document.createElement('div')
 		this.frameElm.className      = this.options.elm.className
     this.frameElm.style.position = `absolute`
-		this.frameElm.style.left     = this.options.style.left ?? `${rect.left}px`
-    this.frameElm.style.top      = this.options.style.top  ?? `${rect.top}px`
     this.frameElm.style.width    = `${rect.width}px`
     this.frameElm.style.height   = `${rect.height}px`
     this.frameElm.style.clipPath = `polygon(0px 0px, ${rect.width}px 0px, ${rect.width}px ${rect.height}px, 0px ${rect.height}px)`
