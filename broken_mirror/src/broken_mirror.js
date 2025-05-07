@@ -50,7 +50,6 @@ export class BrokenMirror{
   }
 
 	click(){
-		console.log(1)
 		this.view()
 	}
 
